@@ -1,0 +1,55 @@
+{%- if section.settings.show_promo_ticker -%}
+  <div class="promo-strip-container">
+    <div class="promo-content">
+      {%- for i in (1..2) -%}
+        {%- if section.blocks.size > 0 -%}
+          {%- for block in section.blocks -%}
+            <span><i class="fa-solid fa-circle"></i> {{ block.settings.text }}</span>
+          {%- endfor -%}
+        {%- else -%}
+          <span><i class="fa-solid fa-circle"></i> GET 5% OFF ON ALL ORDERS WHEN YOU PAY ONLINE</span>
+          <span><i class="fa-solid fa-circle"></i> LUXURY TIMEPIECES WITH OFFICIAL WARRANTY</span>
+          <span><i class="fa-solid fa-circle"></i> FAST DELIVERY NATIONWIDE ACROSS PAKISTAN</span>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Promo Ticker Strip",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_promo_ticker",
+      "label": "Show Promo Strip",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "promo_item",
+      "name": "Ticker Message",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Message Text",
+          "default": "GET 5% OFF ON ALL ORDERS WHEN YOU PAY ONLINE"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Promo Ticker Strip",
+      "blocks": [
+        { "type": "promo_item", "settings": { "text": "GET 5% OFF ON ALL ORDERS WHEN YOU PAY ONLINE" } },
+        { "type": "promo_item", "settings": { "text": "LUXURY TIMEPIECES WITH OFFICIAL WARRANTY" } },
+        { "type": "promo_item", "settings": { "text": "FAST DELIVERY NATIONWIDE ACROSS PAKISTAN" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

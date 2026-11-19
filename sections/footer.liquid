@@ -1,0 +1,213 @@
+<div class="footer-wrapper">
+  <!-- 1. Contact Us Section (White Background) -->
+  {%- if section.settings.show_contact_section -%}
+    <section class="contact-section" id="contact-us">
+      <div class="contact-header">
+        <h2>{{ section.settings.contact_title | default: 'Get In Touch' }}</h2>
+        <p>{{ section.settings.contact_subtitle | default: 'Our concierge team is here to assist you with any inquiries.' }}</p>
+      </div>
+
+      <div class="contact-container">
+        <!-- Contact Info -->
+        <div class="contact-info">
+          <div class="info-box">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <h4>Visit Our Boutique</h4>
+              <p>{{ section.settings.address | default: 'Main Boulevard, Gulberg, Lahore, Pakistan' }}</p>
+            </div>
+          </div>
+          <div class="info-box">
+            <i class="fas fa-phone-alt"></i>
+            <div>
+              <h4>Call Us / WhatsApp</h4>
+              <p>{{ section.settings.phone | default: '+92 320 9343453' }}</p>
+            </div>
+          </div>
+          <div class="info-box">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <h4>Email Us</h4>
+              <p>{{ section.settings.email | default: 'support@orenza.com' }}</p>
+            </div>
+          </div>
+
+          <div class="social-icons">
+            {%- if section.settings.social_fb != blank -%}<a href="{{ section.settings.social_fb }}" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>{%- endif -%}
+            {%- if section.settings.social_insta != blank -%}<a href="{{ section.settings.social_insta }}" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>{%- endif -%}
+            {%- if section.settings.social_wa != blank -%}<a href="{{ section.settings.social_wa }}" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>{%- endif -%}
+          </div>
+        </div>
+
+        <!-- Contact Form using Shopify liquid contact form -->
+        <div class="contact-form-box">
+          {% form 'contact' %}
+            {%- if form.posted_successfully? -%}
+              <p style="color: #2e7d32; font-weight: 600; margin-bottom: 10px;">Thank you! Your message has been sent successfully.</p>
+            {%- endif -%}
+            {{ form.errors | default_errors }}
+            <div class="input-group">
+              <input type="text" name="contact[name]" placeholder="Your Name" required>
+              <input type="email" name="contact[email]" placeholder="Your Email" required>
+            </div>
+            <input type="text" name="contact[subject]" placeholder="Subject" required>
+            <textarea name="contact[body]" placeholder="Your Message..." rows="4" required></textarea>
+            <button type="submit" class="btn-submit">SEND MESSAGE</button>
+          {% endform %}
+        </div>
+      </div>
+    </section>
+  {%- endif -%}
+
+  <!-- 2. Newsletter Section -->
+  {%- if section.settings.show_newsletter -%}
+    <section class="newsletter-section">
+      <div class="newsletter-box">
+        <h3>{{ section.settings.newsletter_title | default: 'Join The ORENZA Club' }}</h3>
+        <p>{{ section.settings.newsletter_subtitle | default: 'Subscribe to receive updates, access to exclusive deals, and VIP releases.' }}</p>
+        {% form 'customer', class: 'newsletter-form' %}
+          <input type="hidden" name="contact[tags]" value="newsletter">
+          <input type="email" name="contact[email]" placeholder="Enter your email address" required>
+          <button type="submit">SUBSCRIBE</button>
+        {% endform %}
+      </div>
+    </section>
+  {%- endif -%}
+
+  <!-- 3. Main Footer Links -->
+  <footer class="footer-main">
+    <div class="brand-col">
+      <h2 class="footer-logo">{{ section.settings.footer_brand | default: 'ORENZA TIMEPIECES' }}</h2>
+      <p>{{ section.settings.footer_about | default: 'Elevating your style with masterfully crafted timepieces. Engineered for horological perfection and designed for modern royalty.' }}</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="{{ routes.all_products_collection_url }}">Shop Collection</a></li>
+        <li><a href="{{ routes.collections_url }}">New Arrivals</a></li>
+        <li><a href="#about-us">Our Story</a></li>
+        <li><a href="#contact-us">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Customer Care</h4>
+      <ul>
+        <li><a href="#">Track Order</a></li>
+        <li><a href="#">Shipping Policy</a></li>
+        <li><a href="#">Returns & Exchanges</a></li>
+        <li><a href="#">Warranty Guide</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Refund Policy</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- 4. Bottom Footer Copyright -->
+  <div class="footer-bottom">
+    <p>&copy; {{ 'now' | date: '%Y' }} ORENZA Watches. All Rights Reserved.</p>
+    <div class="payment-icons">
+      <i class="fab fa-cc-visa" title="Visa"></i>
+      <i class="fab fa-cc-mastercard" title="Mastercard"></i>
+      <i class="fab fa-apple-pay" title="Apple Pay"></i>
+      <i class="fas fa-money-bill-wave" title="Cash on Delivery"></i>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Footer & Contact",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_contact_section",
+      "label": "Show Contact Section",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "contact_title",
+      "label": "Contact Section Title",
+      "default": "Get In Touch"
+    },
+    {
+      "type": "text",
+      "id": "contact_subtitle",
+      "label": "Contact Subtitle",
+      "default": "Our concierge team is here to assist you with any inquiries."
+    },
+    {
+      "type": "text",
+      "id": "address",
+      "label": "Boutique Address",
+      "default": "Main Boulevard, Gulberg, Lahore, Pakistan"
+    },
+    {
+      "type": "text",
+      "id": "phone",
+      "label": "Contact Phone / WhatsApp",
+      "default": "+92 320 9343453"
+    },
+    {
+      "type": "text",
+      "id": "email",
+      "label": "Support Email",
+      "default": "support@orenza.com"
+    },
+    {
+      "type": "url",
+      "id": "social_fb",
+      "label": "Facebook URL"
+    },
+    {
+      "type": "url",
+      "id": "social_insta",
+      "label": "Instagram URL"
+    },
+    {
+      "type": "url",
+      "id": "social_wa",
+      "label": "WhatsApp Link (e.g. https://wa.me/923209343453)"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_newsletter",
+      "label": "Show Newsletter Section",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "newsletter_title",
+      "label": "Newsletter Heading",
+      "default": "Join The ORENZA Club"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_subtitle",
+      "label": "Newsletter Subtitle",
+      "default": "Subscribe to receive updates, access to exclusive deals, and VIP releases."
+    },
+    {
+      "type": "text",
+      "id": "footer_brand",
+      "label": "Footer Brand Name",
+      "default": "ORENZA WATCHES"
+    },
+    {
+      "type": "textarea",
+      "id": "footer_about",
+      "label": "Footer About Description",
+      "default": "Elevating your style with masterfully crafted timepieces. Engineered for horological perfection and designed for modern royalty."
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,187 @@
+<section class="hero-slider-section">
+  <div class="slider-container">
+    <!-- Slider Navigation Arrows -->
+    <button class="slider-arrow prev-arrow" type="button" aria-label="Previous Slide">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <button class="slider-arrow next-arrow" type="button" aria-label="Next Slide">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+
+    <!-- Slides Wrapper -->
+    <div class="slides-wrapper" id="heroSlideWrapper" style="width: {{ section.blocks.size | default: 3 | times: 100 }}%;">
+      {%- if section.blocks.size > 0 -%}
+        {%- for block in section.blocks -%}
+          <div class="hero-slide" {{ block.shopify_attributes }} style="
+            {%- if block.settings.image != blank -%}
+              background-image: url('{{ block.settings.image | image_url: width: 2000 }}');
+            {%- else -%}
+              background: linear-gradient(135deg, #111111 0%, #1e1e1e 50%, #0a0a0a 100%);
+            {%- endif -%}
+          ">
+            <div class="hero-slide-overlay"></div>
+            <div class="hero-slide-content">
+              {%- if block.settings.tagline != blank -%}
+                <div class="hero-tagline">{{ block.settings.tagline }}</div>
+              {%- endif -%}
+              <h1 class="hero-title">{{ block.settings.heading | replace: 'Elegance', '<span>Elegance</span>' }}</h1>
+              {%- if block.settings.subheading != blank -%}
+                <p class="hero-subtitle">{{ block.settings.subheading }}</p>
+              {%- endif -%}
+              <div class="hero-btn-group">
+                {%- if block.settings.button_label != blank -%}
+                  <a href="{{ block.settings.button_link | default: routes.all_products_collection_url }}" class="btn-luxury-gold">
+                    {{ block.settings.button_label }}
+                  </a>
+                {%- endif -%}
+                {%- if block.settings.secondary_button_label != blank -%}
+                  <a href="{{ block.settings.secondary_button_link | default: routes.collections_url }}" class="btn-luxury-outline">
+                    {{ block.settings.secondary_button_label }}
+                  </a>
+                {%- endif -%}
+              </div>
+            </div>
+          </div>
+        {%- endfor -%}
+      {%- else -%}
+        <!-- Fallback Default Slides -->
+        <div class="hero-slide" style="background: linear-gradient(135deg, #111111 0%, #1c1c1c 100%);">
+          <div class="hero-slide-overlay"></div>
+          <div class="hero-slide-content">
+            <div class="hero-tagline">ROYAL CRAFTSMANSHIP</div>
+            <h1 class="hero-title">Timeless Luxury, Pure <span>Elegance</span></h1>
+            <p class="hero-subtitle">Discover handcrafted luxury timepieces designed with utmost horological precision for modern royalty.</p>
+            <div class="hero-btn-group">
+              <a href="{{ routes.all_products_collection_url }}" class="btn-luxury-gold">Shop Collection</a>
+              <a href="#about-us" class="btn-luxury-outline">Discover Story</a>
+            </div>
+          </div>
+        </div>
+        <div class="hero-slide" style="background: linear-gradient(135deg, #181510 0%, #0c0c0c 100%);">
+          <div class="hero-slide-overlay"></div>
+          <div class="hero-slide-content">
+            <div class="hero-tagline">LIMITED MASTERPIECES</div>
+            <h1 class="hero-title">Crafted For The <span>Distinguished</span></h1>
+            <p class="hero-subtitle">Every second resonates prestige with our flagship gold and diamond-cut collections.</p>
+            <div class="hero-btn-group">
+              <a href="{{ routes.all_products_collection_url }}" class="btn-luxury-gold">Explore Watches</a>
+            </div>
+          </div>
+        </div>
+        <div class="hero-slide" style="background: linear-gradient(135deg, #0f141a 0%, #050709 100%);">
+          <div class="hero-slide-overlay"></div>
+          <div class="hero-slide-content">
+            <div class="hero-tagline">AUTOMATIC CHRONOGRAPHS</div>
+            <h1 class="hero-title">Precision In Every <span>Tick</span></h1>
+            <p class="hero-subtitle">Swiss-inspired mechanics encased in sapphire crystal and surgical-grade stainless steel.</p>
+            <div class="hero-btn-group">
+              <a href="{{ routes.all_products_collection_url }}" class="btn-luxury-gold">Order Now</a>
+            </div>
+          </div>
+        </div>
+      {%- endif -%}
+    </div>
+
+    <!-- Dots -->
+    <div class="dots-container">
+      {%- assign slide_count = section.blocks.size | default: 3 -%}
+      {%- for i in (1..slide_count) -%}
+        <div class="slider-dot {% if forloop.first %}active{% endif %}" data-index="{{ forloop.index0 }}"></div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero Slider",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide Banner",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Slide Banner Image (1920x800 recommended)"
+        },
+        {
+          "type": "text",
+          "id": "tagline",
+          "label": "Small Tagline",
+          "default": "ROYAL CRAFTSMANSHIP"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Timeless Luxury, Pure Elegance"
+        },
+        {
+          "type": "textarea",
+          "id": "subheading",
+          "label": "Subheading",
+          "default": "Discover handcrafted luxury timepieces designed with utmost horological precision."
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Primary Button Label",
+          "default": "Shop Collection"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Primary Button Link"
+        },
+        {
+          "type": "text",
+          "id": "secondary_button_label",
+          "label": "Secondary Button Label",
+          "default": "Discover Story"
+        },
+        {
+          "type": "url",
+          "id": "secondary_button_link",
+          "label": "Secondary Button Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Slider",
+      "blocks": [
+        {
+          "type": "slide",
+          "settings": {
+            "tagline": "ROYAL CRAFTSMANSHIP",
+            "heading": "Timeless Luxury, Pure Elegance",
+            "subheading": "Discover handcrafted luxury timepieces designed with utmost horological precision for modern royalty.",
+            "button_label": "Shop Collection"
+          }
+        },
+        {
+          "type": "slide",
+          "settings": {
+            "tagline": "LIMITED MASTERPIECES",
+            "heading": "Crafted For The Distinguished",
+            "subheading": "Every second resonates prestige with our flagship gold and diamond-cut collections.",
+            "button_label": "Explore Watches"
+          }
+        },
+        {
+          "type": "slide",
+          "settings": {
+            "tagline": "AUTOMATIC CHRONOGRAPHS",
+            "heading": "Precision In Every Tick",
+            "subheading": "Swiss-inspired mechanics encased in sapphire crystal and surgical-grade stainless steel.",
+            "button_label": "Order Now"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

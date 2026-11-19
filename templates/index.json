@@ -1,0 +1,134 @@
+{
+  "sections": {
+    "hero_slider": {
+      "type": "hero-slider",
+      "blocks": {
+        "slide_1": {
+          "type": "slide",
+          "settings": {
+            "tagline": "ROYAL CRAFTSMANSHIP",
+            "heading": "Timeless Luxury, Pure Elegance",
+            "subheading": "Discover handcrafted luxury timepieces designed with utmost horological precision for modern royalty.",
+            "button_label": "Shop Collection",
+            "secondary_button_label": "Discover Story"
+          }
+        },
+        "slide_2": {
+          "type": "slide",
+          "settings": {
+            "tagline": "LIMITED MASTERPIECES",
+            "heading": "Crafted For The Distinguished",
+            "subheading": "Every second resonates prestige with our flagship gold and diamond-cut collections.",
+            "button_label": "Explore Watches"
+          }
+        },
+        "slide_3": {
+          "type": "slide",
+          "settings": {
+            "tagline": "AUTOMATIC CHRONOGRAPHS",
+            "heading": "Precision In Every Tick",
+            "subheading": "Swiss-inspired mechanics encased in sapphire crystal and surgical-grade stainless steel.",
+            "button_label": "Order Now"
+          }
+        }
+      },
+      "block_order": [
+        "slide_1",
+        "slide_2",
+        "slide_3"
+      ],
+      "settings": {}
+    },
+    "promo_ticker": {
+      "type": "promo-ticker",
+      "blocks": {
+        "item_1": {
+          "type": "promo_item",
+          "settings": {
+            "text": "GET 5% OFF ON ALL ORDERS WHEN YOU PAY ONLINE"
+          }
+        },
+        "item_2": {
+          "type": "promo_item",
+          "settings": {
+            "text": "LUXURY TIMEPIECES WITH OFFICIAL WARRANTY"
+          }
+        },
+        "item_3": {
+          "type": "promo_item",
+          "settings": {
+            "text": "FAST NATIONWIDE DELIVERY ACROSS PAKISTAN"
+          }
+        }
+      },
+      "block_order": [
+        "item_1",
+        "item_2",
+        "item_3"
+      ],
+      "settings": {
+        "show_promo_ticker": true
+      }
+    },
+    "brand_circles": {
+      "type": "brand-circles",
+      "blocks": {
+        "b1": { "type": "brand_item", "settings": { "brand_name": "Pierre Cardin" } },
+        "b2": { "type": "brand_item", "settings": { "brand_name": "Royal London" } },
+        "b3": { "type": "brand_item", "settings": { "brand_name": "Ferro" } },
+        "b4": { "type": "brand_item", "settings": { "brand_name": "Seiko" } },
+        "b5": { "type": "brand_item", "settings": { "brand_name": "Citizen" } }
+      },
+      "block_order": ["b1", "b2", "b3", "b4", "b5"],
+      "settings": {
+        "subtitle": "CURATED COLLECTIONS",
+        "title": "WATCH BRANDS"
+      }
+    },
+    "featured_grid": {
+      "type": "featured-grid",
+      "settings": {
+        "subtitle": "PREMIUM TIMEPIECES",
+        "title": "FEATURED PRODUCTS",
+        "products_to_show": 4
+      }
+    },
+    "dual_banners": {
+      "type": "dual-banners",
+      "settings": {
+        "banner_1_alt": "Men's Collection Banner",
+        "banner_2_alt": "Premium Editions Banner"
+      }
+    },
+    "trust_features": {
+      "type": "trust-features",
+      "blocks": {
+        "f1": { "type": "feature", "settings": { "icon": "fa-solid fa-truck-fast", "title": "Fast Delivery", "text": "24-hour dispatch in major cities & nationwide express shipping across Pakistan." } },
+        "f2": { "type": "feature", "settings": { "icon": "fa-solid fa-shield-halved", "title": "100% Authentic", "text": "Genuine branded timepieces with official warranty and verification card." } },
+        "f3": { "type": "feature", "settings": { "icon": "fa-solid fa-headset", "title": "24/7 Concierge", "text": "Dedicated customer support via phone call & WhatsApp for all your inquiries." } },
+        "f4": { "type": "feature", "settings": { "icon": "fa-solid fa-credit-card", "title": "Secure Payments", "text": "Cash on Delivery (COD) & encrypted online bank payments accepted." } }
+      },
+      "block_order": ["f1", "f2", "f3", "f4"],
+      "settings": {}
+    },
+    "about_us": {
+      "type": "about-us",
+      "settings": {
+        "subtitle": "THE ORENZA HERITAGE",
+        "heading": "Crafting Timeless <span>Elegance</span> & Precision",
+        "paragraph_1": "Welcome to ORENZA, where luxury meets unmatched craftsmanship. We are dedicated to bringing you the finest timepieces that define status, style, and sophistication. Every watch in our collection is curated to ensure absolute perfection on your wrist.",
+        "paragraph_2": "Whether you are a seasoned horology collector or searching for your signature everyday luxury piece, our commitment to uncompromising quality remains at the core of everything we do.",
+        "button_label": "Discover Our Story"
+      }
+    }
+  },
+  "order": [
+    "hero_slider",
+    "promo_ticker",
+    "brand_circles",
+    "featured_grid",
+    "dual_banners",
+    "trust_features",
+    "about_us"
+  ]
+}

@@ -1,0 +1,182 @@
+<section class="featured-grid-section">
+  <div class="grid-wrapper">
+    <div class="section-header" style="text-align: center; margin-bottom: 35px;">
+      {%- if section.settings.subtitle != blank -%}
+        <div class="section-subtitle">{{ section.settings.subtitle }}</div>
+      {%- endif -%}
+      <h2 class="section-title">{{ section.settings.title | default: 'FEATURED TIMEPIECES' }}</h2>
+    </div>
+
+    <div class="grid-container">
+      {%- assign collection = collections[section.settings.collection] -%}
+
+      {%- if collection != blank and collection.products.size > 0 -%}
+        {%- for product in collection.products limit: section.settings.products_to_show -%}
+          <div class="grid-card">
+            <div class="card-image-wrapper">
+              {%- if product.featured_image != blank -%}
+                <img src="{{ product.featured_image | image_url: width: 600 }}" alt="{{ product.title | escape }}" loading="lazy">
+              {%- else -%}
+                <div style="display:flex; justify-content:center; align-items:center; height:100%; color:#555;">
+                  <i class="fas fa-clock" style="font-size: 50px;"></i>
+                </div>
+              {%- endif -%}
+
+              {%- if product.compare_at_price > product.price -%}
+                <span class="badge-tag">Sale</span>
+              {%- endif -%}
+
+              <div class="image-overlay-text {% cycle 'overlay-left', 'overlay-right' %}">
+                {% cycle 'Bold Elegance<br>Timeless Appeal', 'Precision Crafted<br>for Every Moment', 'Refined Style<br>Distinct Character', 'Classic Design<br>Modern Sophistication' %}
+              </div>
+            </div>
+
+            <div class="card-info">
+              <h3 class="card-title">
+                <a href="{{ product.url }}">{{ product.title }}</a>
+              </h3>
+              <div class="card-price-box">
+                <span class="card-price">{{ product.price | money }}</span>
+                {%- if product.compare_at_price > product.price -%}
+                  <span class="card-compare-price">{{ product.compare_at_price | money }}</span>
+                {%- endif -%}
+              </div>
+              
+              <form method="post" action="/cart/add">
+                <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+                <input type="hidden" name="quantity" value="1" />
+                <button type="submit" class="shop-now-btn">Add to Cart</button>
+              </form>
+            </div>
+          </div>
+        {%- endfor -%}
+      {%- else -%}
+        <!-- DEMO LUXURY WATCHES (Matches Reference Website Exactly) -->
+        <!-- Card 1 -->
+        <div class="grid-card">
+          <div class="card-image-wrapper">
+            <div style="background: radial-gradient(circle, #252525 0%, #0d0d0d 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+              <i class="fas fa-stopwatch-20" style="font-size: 64px; color: #D4AF37;"></i>
+            </div>
+            <span class="badge-tag">Featured</span>
+            <div class="image-overlay-text overlay-left">
+              Bold Elegance<br>Timeless Appeal
+            </div>
+          </div>
+          <div class="card-info">
+            <h3 class="card-title"><a href="#">Orenza Royal Day-Date Gold</a></h3>
+            <div class="card-price-box">
+              <span class="card-price">Rs. 25,000</span>
+              <span class="card-compare-price">Rs. 32,000</span>
+            </div>
+            <button type="button" class="shop-now-btn">Add to Cart</button>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="grid-card">
+          <div class="card-image-wrapper">
+            <div style="background: radial-gradient(circle, #252525 0%, #0d0d0d 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+              <i class="fas fa-clock" style="font-size: 64px; color: #e5e5e5;"></i>
+            </div>
+            <div class="image-overlay-text overlay-right">
+              Precision Crafted<br>for Every Moment
+            </div>
+          </div>
+          <div class="card-info">
+            <h3 class="card-title"><a href="#">Orenza Decent Choice Quartz</a></h3>
+            <div class="card-price-box">
+              <span class="card-price">Rs. 18,500</span>
+              <span class="card-compare-price">Rs. 22,000</span>
+            </div>
+            <button type="button" class="shop-now-btn">Add to Cart</button>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="grid-card">
+          <div class="card-image-wrapper">
+            <div style="background: radial-gradient(circle, #2c221a 0%, #0d0d0d 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+              <i class="fas fa-business-time" style="font-size: 64px; color: #D4AF37;"></i>
+            </div>
+            <div class="image-overlay-text overlay-right">
+              Refined Style<br>Distinct Character
+            </div>
+          </div>
+          <div class="card-info">
+            <h3 class="card-title"><a href="#">Orenza Classic Leather Chrono</a></h3>
+            <div class="card-price-box">
+              <span class="card-price">Rs. 15,000</span>
+              <span class="card-compare-price">Rs. 19,000</span>
+            </div>
+            <button type="button" class="shop-now-btn">Add to Cart</button>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="grid-card">
+          <div class="card-image-wrapper">
+            <div style="background: radial-gradient(circle, #132438 0%, #080f18 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+              <i class="fas fa-gem" style="font-size: 64px; color: #4da6ff;"></i>
+            </div>
+            <span class="badge-tag">Hot</span>
+            <div class="image-overlay-text overlay-right">
+              Classic Design<br>Modern Sophistication
+            </div>
+          </div>
+          <div class="card-info">
+            <h3 class="card-title"><a href="#">Orenza Midnight Automatic</a></h3>
+            <div class="card-price-box">
+              <span class="card-price">Rs. 22,000</span>
+              <span class="card-compare-price">Rs. 28,000</span>
+            </div>
+            <button type="button" class="shop-now-btn">Add to Cart</button>
+          </div>
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Featured Products Grid",
+  "settings": [
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "PREMIUM TIMEPIECES"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "FEATURED PRODUCTS"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Select Collection from Shopify Admin"
+    },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "min": 4,
+      "max": 16,
+      "step": 4,
+      "default": 4,
+      "label": "Number of products to show"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured Products Grid",
+      "settings": {
+        "title": "FEATURED PRODUCTS",
+        "subtitle": "PREMIUM TIMEPIECES"
+      }
+    }
+  ]
+}
+{% endschema %}

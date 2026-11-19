@@ -1,0 +1,35 @@
+[
+  {
+    "name": "Luxury Colors",
+    "settings": [
+      {
+        "type": "color",
+        "id": "color_primary_gold",
+        "label": "Primary Accent Gold",
+        "default": "#D4AF37"
+      },
+      {
+        "type": "color",
+        "id": "color_dark_bg",
+        "label": "Dark Background",
+        "default": "#000000"
+      },
+      {
+        "type": "color",
+        "id": "color_light_bg",
+        "label": "Light Background",
+        "default": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Favicon",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Store Favicon"
+      }
+    ]
+  }
+]

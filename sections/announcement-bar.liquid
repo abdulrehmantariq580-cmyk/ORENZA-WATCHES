@@ -1,0 +1,68 @@
+{%- if section.settings.show_announcement -%}
+  <div class="top-bar" role="region" aria-label="Announcement">
+    <div class="marquee-content">
+      {%- for i in (1..2) -%}
+        {%- if section.blocks.size > 0 -%}
+          {%- for block in section.blocks -%}
+            <span>
+              {%- if block.settings.icon != blank -%}
+                <i class="{{ block.settings.icon }}"></i>
+              {%- endif -%}
+              {{ block.settings.text }}
+            </span>
+          {%- endfor -%}
+        {%- else -%}
+          <span><i class="fas fa-truck"></i> FREE SHIPPING NATIONWIDE</span>
+          <span><i class="fas fa-gem"></i> PREMIUM LUXURY WATCHES</span>
+          <span><i class="fas fa-shield-alt"></i> 24 MONTHS WARRANTY</span>
+          <span><i class="fas fa-phone-alt"></i> TOLL FREE: 1800 228 668</span>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Announcement Bar",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_announcement",
+      "label": "Show announcement bar",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "announcement",
+      "name": "Announcement Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "FontAwesome Icon Class",
+          "default": "fas fa-truck"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "FREE SHIPPING NATIONWIDE"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Announcement Bar",
+      "blocks": [
+        { "type": "announcement", "settings": { "icon": "fas fa-truck", "text": "FREE SHIPPING NATIONWIDE" } },
+        { "type": "announcement", "settings": { "icon": "fas fa-gem", "text": "PREMIUM LUXURY WATCHES" } },
+        { "type": "announcement", "settings": { "icon": "fas fa-shield-alt", "text": "24 MONTHS WARRANTY" } },
+        { "type": "announcement", "settings": { "icon": "fas fa-phone-alt", "text": "TOLL FREE: 1800 228 668" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

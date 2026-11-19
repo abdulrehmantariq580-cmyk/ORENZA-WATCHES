@@ -1,0 +1,14 @@
+# Dependencies and system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Zip builds
+*.zip
+
+# VS Code / IDE
+.vscode/
+.idea/
+
+# Preview scratch
+demo-preview.html

@@ -1,0 +1,111 @@
+<section class="watch-brands-section">
+  <div class="section-header">
+    {%- if section.settings.subtitle != blank -%}
+      <div class="section-subtitle">{{ section.settings.subtitle }}</div>
+    {%- endif -%}
+    <h2 class="section-title">{{ section.settings.title | default: 'WATCH BRANDS' }}</h2>
+  </div>
+
+  <div class="brands-scroll-wrapper">
+    <div class="brands-container">
+      {%- for i in (1..2) -%}
+        {%- if section.blocks.size > 0 -%}
+          {%- for block in section.blocks -%}
+            <a href="{{ block.settings.link | default: routes.collections_url }}" class="brand-circle-item" {{ block.shopify_attributes }}>
+              <div class="brand-circle">
+                {%- if block.settings.image != blank -%}
+                  <img src="{{ block.settings.image | image_url: width: 240, height: 240 }}" alt="{{ block.settings.brand_name }}">
+                {%- else -%}
+                  <i class="fas fa-gem" style="font-size: 32px; color: #D4AF37;"></i>
+                {%- endif -%}
+              </div>
+              <span class="brand-name">{{ block.settings.brand_name }}</span>
+            </a>
+          {%- endfor -%}
+        {%- else -%}
+          <!-- Default brand items matching reference website -->
+          <a href="{{ routes.collections_url }}" class="brand-circle-item">
+            <div class="brand-circle"><i class="fas fa-crown" style="font-size: 32px; color: #D4AF37;"></i></div>
+            <span class="brand-name">Rolex</span>
+          </a>
+          <a href="{{ routes.collections_url }}" class="brand-circle-item">
+            <div class="brand-circle"><i class="fas fa-shield-alt" style="font-size: 32px; color: #111;"></i></div>
+            <span class="brand-name">Pierre Cardin</span>
+          </a>
+          <a href="{{ routes.collections_url }}" class="brand-circle-item">
+            <div class="brand-circle"><i class="fas fa-award" style="font-size: 32px; color: #D4AF37;"></i></div>
+            <span class="brand-name">Royal London</span>
+          </a>
+          <a href="{{ routes.collections_url }}" class="brand-circle-item">
+            <div class="brand-circle"><i class="fas fa-compass" style="font-size: 32px; color: #111;"></i></div>
+            <span class="brand-name">Ferro</span>
+          </a>
+          <a href="{{ routes.collections_url }}" class="brand-circle-item">
+            <div class="brand-circle"><i class="fas fa-stopwatch" style="font-size: 32px; color: #D4AF37;"></i></div>
+            <span class="brand-name">Seiko</span>
+          </a>
+          <a href="{{ routes.collections_url }}" class="brand-circle-item">
+            <div class="brand-circle"><i class="fas fa-clock" style="font-size: 32px; color: #111;"></i></div>
+            <span class="brand-name">Citizen</span>
+          </a>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Watch Brands Circles",
+  "settings": [
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Section Subtitle",
+      "default": "CURATED COLLECTIONS"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Heading",
+      "default": "WATCH BRANDS"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "brand_item",
+      "name": "Brand / Category",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Brand Logo / Icon Image"
+        },
+        {
+          "type": "text",
+          "id": "brand_name",
+          "label": "Brand / Collection Name",
+          "default": "Pierre Cardin"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link Target"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Watch Brands Circles",
+      "blocks": [
+        { "type": "brand_item", "settings": { "brand_name": "Pierre Cardin" } },
+        { "type": "brand_item", "settings": { "brand_name": "Royal London" } },
+        { "type": "brand_item", "settings": { "brand_name": "Ferro" } },
+        { "type": "brand_item", "settings": { "brand_name": "Seiko" } },
+        { "type": "brand_item", "settings": { "brand_name": "Citizen" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

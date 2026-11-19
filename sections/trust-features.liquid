@@ -1,0 +1,89 @@
+<section class="trust-features-section">
+  {%- if section.blocks.size > 0 -%}
+    {%- for block in section.blocks -%}
+      <div class="trust-feature-box" {{ block.shopify_attributes }}>
+        <div class="feature-icon-wrapper">
+          <i class="{{ block.settings.icon }}"></i>
+        </div>
+        <h4>{{ block.settings.title }}</h4>
+        <p>{{ block.settings.text }}</p>
+      </div>
+    {%- endfor -%}
+  {%- else -%}
+    <div class="trust-feature-box">
+      <div class="feature-icon-wrapper">
+        <i class="fa-solid fa-truck-fast"></i>
+      </div>
+      <h4>Fast Delivery</h4>
+      <p>24-hour dispatch in major cities & nationwide express shipping across Pakistan.</p>
+    </div>
+
+    <div class="trust-feature-box">
+      <div class="feature-icon-wrapper">
+        <i class="fa-solid fa-shield-halved"></i>
+      </div>
+      <h4>100% Authentic</h4>
+      <p>Genuine branded timepieces with official warranty and verification card.</p>
+    </div>
+
+    <div class="trust-feature-box">
+      <div class="feature-icon-wrapper">
+        <i class="fa-solid fa-headset"></i>
+      </div>
+      <h4>24/7 Concierge</h4>
+      <p>Dedicated customer support via phone call & WhatsApp for all your inquiries.</p>
+    </div>
+
+    <div class="trust-feature-box">
+      <div class="feature-icon-wrapper">
+        <i class="fa-solid fa-credit-card"></i>
+      </div>
+      <h4>Secure Payments</h4>
+      <p>Cash on Delivery (COD) & encrypted online bank payments accepted.</p>
+    </div>
+  {%- endif -%}
+</section>
+
+{% schema %}
+{
+  "name": "Trust Features Strip",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Trust Feature Box",
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "FontAwesome Icon Class",
+          "default": "fa-solid fa-truck-fast"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Feature Title",
+          "default": "Fast Delivery"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Feature Description",
+          "default": "24-hour delivery in major cities & nationwide shipping."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Trust Features Strip",
+      "blocks": [
+        { "type": "feature", "settings": { "icon": "fa-solid fa-truck-fast", "title": "Fast Delivery", "text": "24-hour delivery in major cities & nationwide shipping across Pakistan." } },
+        { "type": "feature", "settings": { "icon": "fa-solid fa-shield-halved", "title": "100% Authentic", "text": "Genuine branded timepieces with official warranty and verification card." } },
+        { "type": "feature", "settings": { "icon": "fa-solid fa-headset", "title": "24/7 Concierge", "text": "Dedicated customer support via phone call & WhatsApp for all your inquiries." } },
+        { "type": "feature", "settings": { "icon": "fa-solid fa-credit-card", "title": "Secure Payments", "text": "Cash on Delivery (COD) & encrypted online bank payments accepted." } }
+      ]
+    }
+  ]
+}
+{% endschema %}
