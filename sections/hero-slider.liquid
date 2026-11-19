@@ -44,8 +44,8 @@
           </div>
         {%- endfor -%}
       {%- else -%}
-        <!-- Fallback Default Slides -->
-        <div class="hero-slide" style="background: linear-gradient(135deg, #111111 0%, #1c1c1c 100%);">
+        <!-- Fallback Default Slides using generated 16:9 banners -->
+        <div class="hero-slide" style="background-image: url('{{ 'hero-banner-1.jpg' | asset_url }}');">
           <div class="hero-slide-overlay"></div>
           <div class="hero-slide-content">
             <div class="hero-tagline">ROYAL CRAFTSMANSHIP</div>
@@ -57,18 +57,18 @@
             </div>
           </div>
         </div>
-        <div class="hero-slide" style="background: linear-gradient(135deg, #181510 0%, #0c0c0c 100%);">
+        <div class="hero-slide" style="background-image: url('{{ 'hero-banner-2.jpg' | asset_url }}');">
           <div class="hero-slide-overlay"></div>
           <div class="hero-slide-content">
             <div class="hero-tagline">LIMITED MASTERPIECES</div>
             <h1 class="hero-title">Crafted For The <span>Distinguished</span></h1>
-            <p class="hero-subtitle">Every second resonates prestige with our flagship gold and diamond-cut collections.</p>
+            <p class="hero-subtitle">Every second resonates prestige with our flagship tourbillon and skeleton mechanical collections.</p>
             <div class="hero-btn-group">
               <a href="{{ routes.all_products_collection_url }}" class="btn-luxury-gold">Explore Watches</a>
             </div>
           </div>
         </div>
-        <div class="hero-slide" style="background: linear-gradient(135deg, #0f141a 0%, #050709 100%);">
+        <div class="hero-slide" style="background-image: url('{{ 'hero-banner-3.jpg' | asset_url }}');">
           <div class="hero-slide-overlay"></div>
           <div class="hero-slide-content">
             <div class="hero-tagline">AUTOMATIC CHRONOGRAPHS</div>
