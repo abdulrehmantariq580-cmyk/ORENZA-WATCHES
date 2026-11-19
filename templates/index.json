@@ -133,16 +133,18 @@
       "settings": {
         "subtitle": "PREMIUM TIMEPIECES",
         "title": "FEATURED PRODUCTS",
-        "collection": "",
-        "products_to_show": 4
+        "collection": "featured-products",
+        "products_to_show": 16
       }
     },
     "dual_banners": {
       "type": "dual-banners",
       "settings": {
         "banner_1_image": "shopify://shop_images/orenza-modern-1a1981ad.png",
+        "banner_1_btn_text": "Shop Now",
         "banner_1_link": "",
         "banner_2_image": "shopify://shop_images/orenza-vintage-ac655505.png",
+        "banner_2_btn_text": "Shop Now",
         "banner_2_link": ""
       }
     },
