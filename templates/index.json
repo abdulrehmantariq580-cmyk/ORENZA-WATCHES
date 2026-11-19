@@ -140,7 +140,9 @@
     "dual_banners": {
       "type": "dual-banners",
       "settings": {
+        "banner_1_image": "shopify://shop_images/orenza-modern-1a1981ad.png",
         "banner_1_link": "",
+        "banner_2_image": "shopify://shop_images/orenza-vintage-ac655505.png",
         "banner_2_link": ""
       }
     },
@@ -192,11 +194,12 @@
       "type": "about-us",
       "settings": {
         "subtitle": "THE ORENZA HERITAGE",
-        "heading": "Crafting Timeless <span>Elegance</span> & Precision",
+        "heading": "Crafting Timeless Elegance & Precision",
         "paragraph_1": "Welcome to ORENZA, where luxury meets unmatched craftsmanship. We are dedicated to bringing you the finest timepieces that define status, style, and sophistication. Every watch in our collection is curated to ensure absolute perfection on your wrist.",
         "paragraph_2": "Whether you are a seasoned horology collector or searching for your signature everyday luxury piece, our commitment to uncompromising quality remains at the core of everything we do.",
         "button_label": "Discover Our Story",
-        "button_link": ""
+        "button_link": "",
+        "image": "shopify://shop_images/orenza-heritage-6a345963.png"
       }
     }
   },
