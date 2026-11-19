@@ -78,6 +78,7 @@
         "b1": {
           "type": "category_item",
           "settings": {
+            "image": "shopify://shop_images/minimal-white-a3711b29.png",
             "brand_name": "Minimal Classic",
             "link": ""
           }
@@ -85,6 +86,7 @@
         "b2": {
           "type": "category_item",
           "settings": {
+            "image": "shopify://shop_images/chrono-white-63fc8f0e.png",
             "brand_name": "Royal Chrono",
             "link": ""
           }
@@ -92,6 +94,7 @@
         "b3": {
           "type": "category_item",
           "settings": {
+            "image": "shopify://shop_images/category-diver-b123eecb.png",
             "brand_name": "Diver Automatic",
             "link": ""
           }
@@ -99,6 +102,7 @@
         "b4": {
           "type": "category_item",
           "settings": {
+            "image": "shopify://shop_images/category-titanium-37e4102f.png",
             "brand_name": "Titanium Series",
             "link": ""
           }
@@ -106,6 +110,7 @@
         "b5": {
           "type": "category_item",
           "settings": {
+            "image": "shopify://shop_images/vintage-white-a62f83bf.png",
             "brand_name": "Vintage Cushion",
             "link": ""
           }
