@@ -17,11 +17,13 @@
     </div>
 
     <div class="about-image-content">
-      {%- if section.settings.image != blank -%}
-        <img src="{{ section.settings.image | image_url: width: 1000 }}" alt="{{ section.settings.heading | escape }}" class="about-clean-img" loading="lazy">
-      {%- else -%}
-        <img src="{{ 'about-heritage.png' | asset_url }}" alt="ORENZA Heritage Executive" class="about-clean-img" loading="lazy">
-      {%- endif -%}
+      <div class="about-media-4-3-wrapper">
+        {%- if section.settings.image != blank -%}
+          <img src="{{ section.settings.image | image_url: width: 1200 }}" alt="{{ section.settings.heading | escape }}" class="about-4-3-img" loading="lazy">
+        {%- else -%}
+          <img src="{{ 'about-heritage.png' | asset_url }}" alt="ORENZA Heritage Executive" class="about-4-3-img" loading="lazy">
+        {%- endif -%}
+      </div>
     </div>
   </div>
 </section>

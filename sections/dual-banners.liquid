@@ -1,55 +1,79 @@
 <section class="dual-banners-section">
-  <!-- Banner 1 (Clean Image Only from Theme Editor) -->
-  <div class="promo-banner-wrapper">
-    {%- if section.settings.banner_1_link != blank -%}<a href="{{ section.settings.banner_1_link }}" class="promo-banner">{%- else -%}<div class="promo-banner">{%- endif -%}
+  <!-- Banner 1 (4:3 Aspect Ratio with Subtle Bottom Vignette & Gold Button) -->
+  <div class="promo-banner-card">
+    <div class="promo-banner-media">
       {%- if section.settings.banner_1_image != blank -%}
-        <img src="{{ section.settings.banner_1_image | image_url: width: 1200 }}" alt="{{ section.settings.banner_1_alt | default: 'Banner' }}" class="dual-clean-img" loading="lazy">
+        <img src="{{ section.settings.banner_1_image | image_url: width: 1200 }}" alt="{{ section.settings.banner_1_title | default: 'Collection' }}" class="dual-banner-4-3-img" loading="lazy">
       {%- else -%}
-        <img src="{{ 'dual-banner-1.png' | asset_url }}" alt="Royal Executive Men Collection" class="dual-clean-img" loading="lazy">
+        <img src="{{ 'dual-banner-1.png' | asset_url }}" alt="Royal Executive Men Collection" class="dual-banner-4-3-img" loading="lazy">
       {%- endif -%}
-    {%- if section.settings.banner_1_link != blank -%}</a>{%- else -%}</div>{%- endif -%}
+      <div class="banner-subtle-gradient"></div>
+    </div>
+    <div class="banner-action-content">
+      <a href="{{ section.settings.banner_1_link | default: routes.all_products_collection_url }}" class="btn-banner-gold">
+        {{ section.settings.banner_1_btn_text | default: 'Shop Now' }}
+      </a>
+    </div>
   </div>
 
-  <!-- Banner 2 (Clean Image Only from Theme Editor) -->
-  <div class="promo-banner-wrapper">
-    {%- if section.settings.banner_2_link != blank -%}<a href="{{ section.settings.banner_2_link }}" class="promo-banner">{%- else -%}<div class="promo-banner">{%- endif -%}
+  <!-- Banner 2 (4:3 Aspect Ratio with Subtle Bottom Vignette & Gold Button) -->
+  <div class="promo-banner-card">
+    <div class="promo-banner-media">
       {%- if section.settings.banner_2_image != blank -%}
-        <img src="{{ section.settings.banner_2_image | image_url: width: 1200 }}" alt="{{ section.settings.banner_2_alt | default: 'Banner' }}" class="dual-clean-img" loading="lazy">
+        <img src="{{ section.settings.banner_2_image | image_url: width: 1200 }}" alt="{{ section.settings.banner_2_title | default: 'Collection' }}" class="dual-banner-4-3-img" loading="lazy">
       {%- else -%}
-        <img src="{{ 'dual-banner-2.png' | asset_url }}" alt="Executive Luxury Watch Collection" class="dual-clean-img" loading="lazy">
+        <img src="{{ 'dual-banner-2.png' | asset_url }}" alt="Executive Luxury Watch Collection" class="dual-banner-4-3-img" loading="lazy">
       {%- endif -%}
-    {%- if section.settings.banner_2_link != blank -%}</a>{%- else -%}</div>{%- endif -%}
+      <div class="banner-subtle-gradient"></div>
+    </div>
+    <div class="banner-action-content">
+      <a href="{{ section.settings.banner_2_link | default: routes.all_products_collection_url }}" class="btn-banner-gold">
+        {{ section.settings.banner_2_btn_text | default: 'Shop Now' }}
+      </a>
+    </div>
   </div>
 </section>
 
 {% schema %}
 {
-  "name": "Dual Clean Banners",
+  "name": "Dual 4:3 Promo Banners",
   "settings": [
     {
       "type": "image_picker",
       "id": "banner_1_image",
-      "label": "First Banner Image (Theme Editor)"
+      "label": "First Banner Image (4:3 Ratio)"
+    },
+    {
+      "type": "text",
+      "id": "banner_1_btn_text",
+      "label": "First Banner Button Text",
+      "default": "Shop Now"
     },
     {
       "type": "url",
       "id": "banner_1_link",
-      "label": "First Banner Link (Optional)"
+      "label": "First Banner Link"
     },
     {
       "type": "image_picker",
       "id": "banner_2_image",
-      "label": "Second Banner Image (Theme Editor)"
+      "label": "Second Banner Image (4:3 Ratio)"
+    },
+    {
+      "type": "text",
+      "id": "banner_2_btn_text",
+      "label": "Second Banner Button Text",
+      "default": "Shop Now"
     },
     {
       "type": "url",
       "id": "banner_2_link",
-      "label": "Second Banner Link (Optional)"
+      "label": "Second Banner Link"
     }
   ],
   "presets": [
     {
-      "name": "Dual Clean Banners"
+      "name": "Dual 4:3 Promo Banners"
     }
   ]
 }
