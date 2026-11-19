@@ -15,6 +15,14 @@
         "slide_zX4dcj": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/Gemini_Generated_Image_smtydcsmtydcsmty.jpg",
+            "button_link": ""
+          }
+        },
+        "slide_4qzyaP": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Gemini_Generated_Image_kd98gykd98gykd98.jpg",
             "button_link": ""
           }
         },
@@ -39,6 +47,7 @@
       },
       "block_order": [
         "slide_zX4dcj",
+        "slide_4qzyaP",
         "slide_1",
         "slide_2",
         "slide_3"
