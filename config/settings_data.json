@@ -1,7 +1,55 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "current": {
     "color_primary_gold": "#D4AF37",
     "color_dark_bg": "#000000",
-    "color_light_bg": "#FFFFFF"
+    "color_light_bg": "#FFFFFF",
+    "sections": {
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "settings": {
+          "show_announcement": true
+        }
+      },
+      "header": {
+        "type": "header",
+        "settings": {
+          "logo": "shopify://shop_images/logo.webp",
+          "brand_text": "ORENZA",
+          "tagline": "CRAFTED FOR ELEGANCE",
+          "menu": "main-menu",
+          "phone_number": "+92 320 9343453",
+          "email_address": "support@orenza.com"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "show_contact_section": true,
+          "contact_title": "Get In Touch",
+          "contact_subtitle": "Our concierge team is here to assist you with any inquiries.",
+          "address": "Main Boulevard, Gulberg, Lahore, Pakistan",
+          "phone": "+92 320 9343453",
+          "email": "support@orenza.com",
+          "social_fb": "",
+          "social_insta": "",
+          "social_wa": "",
+          "show_newsletter": true,
+          "newsletter_title": "Join The ORENZA Club",
+          "newsletter_subtitle": "Subscribe to receive updates, access to exclusive deals, and VIP releases.",
+          "footer_brand": "ORENZA WATCHES",
+          "footer_about": "Elevating your style with masterfully crafted timepieces. Engineered for horological perfection and designed for modern royalty."
+        }
+      }
+    },
+    "content_for_index": []
   }
 }
