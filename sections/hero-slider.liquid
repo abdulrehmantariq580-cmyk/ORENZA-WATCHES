@@ -36,12 +36,17 @@
       {%- endif -%}
     </div>
 
-    <!-- Dots -->
+    <!-- Dots (Dynamic according to actual blocks or 3 default) -->
     <div class="dots-container">
-      {%- assign slide_count = section.blocks.size | default: 3 -%}
-      {%- for i in (1..slide_count) -%}
-        <div class="slider-dot {% if forloop.first %}active{% endif %}" data-index="{{ forloop.index0 }}"></div>
-      {%- endfor -%}
+      {%- if section.blocks.size > 0 -%}
+        {%- for block in section.blocks -%}
+          <div class="slider-dot {% if forloop.first %}active{% endif %}" data-index="{{ forloop.index0 }}"></div>
+        {%- endfor -%}
+      {%- else -%}
+        <div class="slider-dot active" data-index="0"></div>
+        <div class="slider-dot" data-index="1"></div>
+        <div class="slider-dot" data-index="2"></div>
+      {%- endif -%}
     </div>
   </div>
 </section>
