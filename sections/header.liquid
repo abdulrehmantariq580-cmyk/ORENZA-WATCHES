@@ -5,20 +5,13 @@
       <i class="fas fa-bars"></i>
     </button>
 
-    <!-- Header Logo: Custom AI Emblem + Luxury Text -->
+    <!-- Header Logo: Pure Single Image Logo (Icon Left + Text Right) -->
     <div class="logo-container">
       <a href="{{ routes.root_url }}" class="header-logo-link">
         {%- if section.settings.logo != blank -%}
-          <img src="{{ section.settings.logo | image_url: width: 300 }}" alt="{{ shop.name }}" class="header-logo-img">
+          <img src="{{ section.settings.logo | image_url: width: 600 }}" alt="{{ shop.name }}" class="header-logo-img">
         {%- else -%}
-          <!-- AI Designed Emblem (Crown + Watch O) on Left + ORENZA Text on Right -->
-          <div class="custom-header-logo-box">
-            <img src="{{ 'orenza-icon.png' | asset_url }}" alt="ORENZA Emblem" class="header-logo-emblem">
-            <div class="header-brand-text">
-              <span class="brand-main-title">{{ section.settings.brand_text | default: 'ORENZA' }}</span>
-              <span class="brand-sub-tagline">{{ section.settings.tagline | default: 'CRAFTED FOR ELEGANCE' }}</span>
-            </div>
-          </div>
+          <img src="{{ 'orenza-header-logo.png' | asset_url }}" alt="ORENZA - CRAFTED FOR ELEGANCE" class="header-logo-img">
         {%- endif -%}
       </a>
     </div>
@@ -39,14 +32,10 @@
       {%- endif -%}
     </ul>
 
-    <!-- Header Right Action Icons -->
+    <!-- Header Right Action Icons (Heart removed, Search & Cart kept clean) -->
     <div class="nav-icons">
       <a href="{{ routes.search_url }}" class="icon-box" aria-label="Search">
         <i class="fas fa-search"></i>
-      </a>
-      <a href="#" class="icon-box wishlist-icon" aria-label="Wishlist">
-        <i class="far fa-heart"></i>
-        <span class="badge">0</span>
       </a>
       <a href="{{ routes.cart_url }}" class="icon-box cart-icon" aria-label="Cart">
         <i class="fas fa-shopping-bag"></i>
@@ -60,8 +49,7 @@
 <div class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true">
   <div class="drawer-header">
     <div class="drawer-logo">
-      <img src="{{ 'orenza-icon.png' | asset_url }}" alt="ORENZA Icon">
-      <span>ORENZA</span>
+      <img src="{{ 'orenza-header-logo.png' | asset_url }}" alt="ORENZA" style="height: 38px; width: auto; object-fit: contain;">
     </div>
     <button class="drawer-close" id="drawerCloseBtn" aria-label="Close Navigation Menu">
       <i class="fas fa-times"></i>

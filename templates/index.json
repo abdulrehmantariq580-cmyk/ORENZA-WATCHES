@@ -5,31 +5,15 @@
       "blocks": {
         "slide_1": {
           "type": "slide",
-          "settings": {
-            "tagline": "ROYAL CRAFTSMANSHIP",
-            "heading": "Timeless Luxury, Pure Elegance",
-            "subheading": "Discover handcrafted luxury timepieces designed with utmost horological precision for modern royalty.",
-            "button_label": "Shop Collection",
-            "secondary_button_label": "Discover Story"
-          }
+          "settings": {}
         },
         "slide_2": {
           "type": "slide",
-          "settings": {
-            "tagline": "LIMITED MASTERPIECES",
-            "heading": "Crafted For The Distinguished",
-            "subheading": "Every second resonates prestige with our flagship gold and diamond-cut collections.",
-            "button_label": "Explore Watches"
-          }
+          "settings": {}
         },
         "slide_3": {
           "type": "slide",
-          "settings": {
-            "tagline": "AUTOMATIC CHRONOGRAPHS",
-            "heading": "Precision In Every Tick",
-            "subheading": "Swiss-inspired mechanics encased in sapphire crystal and surgical-grade stainless steel.",
-            "button_label": "Order Now"
-          }
+          "settings": {}
         }
       },
       "block_order": [
@@ -73,16 +57,16 @@
     "brand_circles": {
       "type": "brand-circles",
       "blocks": {
-        "b1": { "type": "brand_item", "settings": { "brand_name": "Pierre Cardin" } },
-        "b2": { "type": "brand_item", "settings": { "brand_name": "Royal London" } },
-        "b3": { "type": "brand_item", "settings": { "brand_name": "Ferro" } },
-        "b4": { "type": "brand_item", "settings": { "brand_name": "Seiko" } },
-        "b5": { "type": "brand_item", "settings": { "brand_name": "Citizen" } }
+        "b1": { "type": "category_item", "settings": { "brand_name": "Minimal Classic" } },
+        "b2": { "type": "category_item", "settings": { "brand_name": "Royal Chrono" } },
+        "b3": { "type": "category_item", "settings": { "brand_name": "Diver Automatic" } },
+        "b4": { "type": "category_item", "settings": { "brand_name": "Titanium Series" } },
+        "b5": { "type": "category_item", "settings": { "brand_name": "Vintage Cushion" } }
       },
       "block_order": ["b1", "b2", "b3", "b4", "b5"],
       "settings": {
-        "subtitle": "CURATED COLLECTIONS",
-        "title": "WATCH BRANDS"
+        "subtitle": "EXPLORE OUR COLLECTION",
+        "title": "TOP CATEGORIES"
       }
     },
     "featured_grid": {
@@ -95,10 +79,7 @@
     },
     "dual_banners": {
       "type": "dual-banners",
-      "settings": {
-        "banner_1_alt": "Men's Collection Banner",
-        "banner_2_alt": "Premium Editions Banner"
-      }
+      "settings": {}
     },
     "trust_features": {
       "type": "trust-features",

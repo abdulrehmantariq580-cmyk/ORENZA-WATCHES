@@ -3,7 +3,7 @@
     {%- if section.settings.subtitle != blank -%}
       <div class="section-subtitle">{{ section.settings.subtitle }}</div>
     {%- endif -%}
-    <h2 class="section-title">{{ section.settings.title | default: 'WATCH BRANDS' }}</h2>
+    <h2 class="section-title">{{ section.settings.title | default: 'TOP CATEGORIES' }}</h2>
   </div>
 
   <div class="brands-scroll-wrapper">
@@ -14,39 +14,35 @@
             <a href="{{ block.settings.link | default: routes.collections_url }}" class="brand-circle-item" {{ block.shopify_attributes }}>
               <div class="brand-circle">
                 {%- if block.settings.image != blank -%}
-                  <img src="{{ block.settings.image | image_url: width: 240, height: 240 }}" alt="{{ block.settings.brand_name }}">
+                  <img src="{{ block.settings.image | image_url: width: 300, height: 300 }}" alt="{{ block.settings.brand_name }}" class="cat-clean-img" loading="lazy">
                 {%- else -%}
-                  <i class="fas fa-gem" style="font-size: 32px; color: #D4AF37;"></i>
+                  <img src="{{ 'cat-1.png' | asset_url }}" alt="Category" class="cat-clean-img" loading="lazy">
                 {%- endif -%}
               </div>
               <span class="brand-name">{{ block.settings.brand_name }}</span>
             </a>
           {%- endfor -%}
         {%- else -%}
-          <!-- Default brand items matching reference website -->
+          <!-- Default Clean Category Images (No Icons, No Dullness) -->
           <a href="{{ routes.collections_url }}" class="brand-circle-item">
-            <div class="brand-circle"><i class="fas fa-crown" style="font-size: 32px; color: #D4AF37;"></i></div>
-            <span class="brand-name">Rolex</span>
+            <div class="brand-circle"><img src="{{ 'cat-1.png' | asset_url }}" alt="Minimal Classic" class="cat-clean-img"></div>
+            <span class="brand-name">Minimal Classic</span>
           </a>
           <a href="{{ routes.collections_url }}" class="brand-circle-item">
-            <div class="brand-circle"><i class="fas fa-shield-alt" style="font-size: 32px; color: #111;"></i></div>
-            <span class="brand-name">Pierre Cardin</span>
+            <div class="brand-circle"><img src="{{ 'cat-2.png' | asset_url }}" alt="Royal Chronograph" class="cat-clean-img"></div>
+            <span class="brand-name">Royal Chrono</span>
           </a>
           <a href="{{ routes.collections_url }}" class="brand-circle-item">
-            <div class="brand-circle"><i class="fas fa-award" style="font-size: 32px; color: #D4AF37;"></i></div>
-            <span class="brand-name">Royal London</span>
+            <div class="brand-circle"><img src="{{ 'cat-3.png' | asset_url }}" alt="Diver Automatic" class="cat-clean-img"></div>
+            <span class="brand-name">Diver Automatic</span>
           </a>
           <a href="{{ routes.collections_url }}" class="brand-circle-item">
-            <div class="brand-circle"><i class="fas fa-compass" style="font-size: 32px; color: #111;"></i></div>
-            <span class="brand-name">Ferro</span>
+            <div class="brand-circle"><img src="{{ 'cat-4.png' | asset_url }}" alt="Titanium Edition" class="cat-clean-img"></div>
+            <span class="brand-name">Titanium Series</span>
           </a>
           <a href="{{ routes.collections_url }}" class="brand-circle-item">
-            <div class="brand-circle"><i class="fas fa-stopwatch" style="font-size: 32px; color: #D4AF37;"></i></div>
-            <span class="brand-name">Seiko</span>
-          </a>
-          <a href="{{ routes.collections_url }}" class="brand-circle-item">
-            <div class="brand-circle"><i class="fas fa-clock" style="font-size: 32px; color: #111;"></i></div>
-            <span class="brand-name">Citizen</span>
+            <div class="brand-circle"><img src="{{ 'cat-5.png' | asset_url }}" alt="Vintage Cushion" class="cat-clean-img"></div>
+            <span class="brand-name">Vintage Cushion</span>
           </a>
         {%- endif -%}
       {%- endfor -%}
@@ -56,36 +52,36 @@
 
 {% schema %}
 {
-  "name": "Watch Brands Circles",
+  "name": "Top Categories Circles",
   "settings": [
     {
       "type": "text",
       "id": "subtitle",
       "label": "Section Subtitle",
-      "default": "CURATED COLLECTIONS"
+      "default": "EXPLORE OUR COLLECTION"
     },
     {
       "type": "text",
       "id": "title",
       "label": "Section Heading",
-      "default": "WATCH BRANDS"
+      "default": "TOP CATEGORIES"
     }
   ],
   "blocks": [
     {
-      "type": "brand_item",
-      "name": "Brand / Category",
+      "type": "category_item",
+      "name": "Category Circle",
       "settings": [
         {
           "type": "image_picker",
           "id": "image",
-          "label": "Brand Logo / Icon Image"
+          "label": "Category Watch Image (Clean)"
         },
         {
           "type": "text",
           "id": "brand_name",
-          "label": "Brand / Collection Name",
-          "default": "Pierre Cardin"
+          "label": "Category Name",
+          "default": "Royal Chrono"
         },
         {
           "type": "url",
@@ -97,13 +93,17 @@
   ],
   "presets": [
     {
-      "name": "Watch Brands Circles",
+      "name": "Top Categories Circles",
+      "settings": {
+        "title": "TOP CATEGORIES",
+        "subtitle": "EXPLORE OUR COLLECTION"
+      },
       "blocks": [
-        { "type": "brand_item", "settings": { "brand_name": "Pierre Cardin" } },
-        { "type": "brand_item", "settings": { "brand_name": "Royal London" } },
-        { "type": "brand_item", "settings": { "brand_name": "Ferro" } },
-        { "type": "brand_item", "settings": { "brand_name": "Seiko" } },
-        { "type": "brand_item", "settings": { "brand_name": "Citizen" } }
+        { "type": "category_item", "settings": { "brand_name": "Minimal Classic" } },
+        { "type": "category_item", "settings": { "brand_name": "Royal Chrono" } },
+        { "type": "category_item", "settings": { "brand_name": "Diver Automatic" } },
+        { "type": "category_item", "settings": { "brand_name": "Titanium Series" } },
+        { "type": "category_item", "settings": { "brand_name": "Vintage Cushion" } }
       ]
     }
   ]
