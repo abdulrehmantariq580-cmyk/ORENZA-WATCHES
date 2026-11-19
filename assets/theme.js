@@ -63,7 +63,7 @@ function initHeroSlider() {
     else if (index < 0) currentIndex = totalSlides - 1;
     else currentIndex = index;
 
-    const percentage = currentIndex * -(100 / totalSlides);
+    const percentage = currentIndex * -100;
     wrapper.style.transform = `translateX(${percentage}%)`;
 
     dots.forEach((dot, idx) => {
